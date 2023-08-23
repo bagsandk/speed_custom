@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="lib/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- <script src="lib/less.min.js" type="text/javascript"></script> -->
+  <!-- <link rel="stylesheet/less" type="text/css" href="styles.less" /> -->
+
+  <link href="lib/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+  <link href="style2.css" rel="stylesheet" />
+
+  <!-- <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Play:700,400' type='text/css'> -->
+
+  <script type="text/javascript" src="lib/event/d3.v3.min.js"></script>
+  <script type="text/javascript" src="lib/event/pointerevents.js"></script>
+  <script type="text/javascript" src="lib/event/pointergestures.js"></script>
+  <script type="text/javascript" src="lib/event/iopctrl.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div id="modal1" class="modal">
+    <div class="modal-content text-center" style="text-align:center">
+        <div class="modal-text">
+          <h2 class="white-text" id="text-download-speed">DOWNLOAD SPEED</h2>
+          <h1 class="white-text" id="download-result">0</h1>
+          <h4 class="white-text" id="download-type">Mbps</h4>
+        </div>
+
+      </div>
+  </div>
+    <div class="row">
+      <div class="col s6">
+        <div class="left-align">
+          <img class="img" src="assets/picture2.png" height="auto" width="35%"/>
+        </div>
+      </div>
+      <div class="col s6">
+        <div class="right-align">
+          <img class="img" src="assets/picture1.png" height="auto" width="30%" style="margin-top:15px"/>
+        </div>
+      </div>
+      <!-- <img class="img" src="assets/picture2.png" /> -->
+    </div>
+    <div class="row">
+      <div class="col s4">
+        <div class="center-align">
+          <div class="speedometr" >
+            <svg class="speed" preserveAspectRatio="none" viewBox="-101 -106 469 445">
+              <defs>
+                <linearGradient id="linear-1-left" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="10%"   stop-color="#708090"/>
+
+                  <stop offset="100%" stop-color="#c90000"/>
+                </linearGradient>
+              </defs>
+              <defs>
+                <linearGradient id="linear-2-left" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="20%"   stop-color="#fff"/>
+
+                  <stop offset="90%" stop-color="rgba(255,255,255,0)"/>
+                </linearGradient>v
+              </defs>
+              <defs>
+                <filter id="f4" x="0" y="0" width="200%" height="200%">
+                  <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
+
+                  <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="25" />
+                  <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                </filter>
+              </defs>
+              <defs>
+                <filter id="f1" x="0" y="0">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="7" />
+                </filter>
+              </defs>
+
+              <path  id="arc2"
+              style="fill:none;fill-rule:evenodd;stroke-width:52;stroke-miterlimit:1;stroke-opacity:0.05;transform-origin:180px 180px;transform:scale(0.9 0.9)"
+              transform="scale(0.9 0.9) translate(20 18)"
+              stroke="url(#linear-1-left)"
+              filter="url(#f1)"
+
+              d="m 66.906305,293.33748 a 160.10918,160.10918 0 0 1 10e-7,-226.428566 a 160.10918,160.10918 0 0 1 226.428574,10e-7 a 160.10918,160.10918 0 0 1 -10e-6,226.428565" />
+              <path id="path"
+              style="fill:none;fill-rule:evenodd;stroke-width:38;stroke-miterlimit:4;stroke:#223050;stroke-opacity:0.5;"
+              d="m 66.906305,293.33748 a 160.10918,160.10918 0 0 1 10e-7,-226.428566 a 160.10918,160.10918 0 0 1 226.428574,10e-7 a 160.10918,160.10918 0 0 1 -10e-6,226.428565" />
+              <path
+              style="fill:none;fill-rule:evenodd;;stroke-width:40;stroke-miterlimit:4;" stroke="url(#linear-1-left)"
+              id="arc"
+              d="m 66.906305,293.33748 a 160.10918,160.10918 0 0 1 10e-7,-226.428566 a 160.10918,160.10918 0 0 1 226.428574,10e-7 a 160.10918,160.10918 0 0 1 -10e-6,226.428565" />
+
+              <!-- <line class="line" x1="53" y1="306" x2="180" y2="180" style="stroke:rgb(255,0,0);stroke-width:2;transform-origin:63px 0px"
+              /> -->
+              <polygon id="bigLine" class="line1" fill="url(#linear-2-left)"
+              points="180,168 180,192  97,182  50,174"
+              style="fill-opacity:0.9;transform-origin:59px 6px" />
+
+
+
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(226 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(270 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(315 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(405 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(450 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(494 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26">
+              </line>
+
+              <text x="85" y="275" class="number">0</text>
+              <text x="50" y="187" class="number">20</text>
+              <text x="82" y="100" class="number">40</text>
+              <text x="170" y="60" class="number">60</text>
+              <text x="255" y="100" class="number">80</text>
+              <text x="292" y="187" class="number">100</text>
+              <text x="255" y="275" class="number">120</text>
+
+            </svg>
+            <div class="speedometr-info speed-info-left">
+              <div class="speed-info">
+                <h5 class="h5-speed-info">Latency</h5 class="h5-speed-info">
+              </div>
+              <div id="speed-number1">0</div>
+              <!-- <button id="butanim1" class="butanim">START</button> -->
+              <div class="mbps">
+                <svg width="20" height="20" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="9" stroke="#6EFDF3" stroke-width="2" fill="none" />
+                <line x1="15" y1="10" x2="5" y2="10" stroke="#6EFDF3" stroke-width="2"/>
+                </svg>
+                ms
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="col s4">
+        <div class="center-align">
+          <div class="speedometr" >
+            <svg class="speed" preserveAspectRatio="none" viewBox="-2 -30 373 375">
+              <defs>
+                <linearGradient id="linear-1-mid" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="10%"   stop-color="#708090"/>
+
+                  <stop offset="100%" stop-color="#c90000"/>
+                </linearGradient>
+              </defs>
+              <defs>
+                <linearGradient id="linear-2-mid" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="20%"   stop-color="#fff"/>
+
+                  <stop offset="90%" stop-color="rgba(255,255,255,0)"/>
+                </linearGradient>
+              </defs>
+              <defs>
+                <filter id="f4" x="0" y="0" width="200%" height="200%">
+                  <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
+
+                  <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="25" />
+                  <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                </filter>
+              </defs>
+              <defs>
+                <filter id="f1" x="0" y="0">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="7" />
+                </filter>
+              </defs>
+
+              <path  id="arc2"
+              style="fill:none;fill-rule:evenodd;stroke-width:52;stroke-miterlimit:1;stroke-opacity:0.05;transform-origin:180px 180px;transform:scale(0.9 0.9)"
+              transform="scale(0.9 0.9) translate(20 18)"
+              stroke="url(#linear-1-mid)"
+              filter="url(#f1)"
+
+              d="m 66.906305,293.33748 a 160.10918,160.10918 0 0 1 10e-7,-226.428566 a 160.10918,160.10918 0 0 1 226.428574,10e-7 a 160.10918,160.10918 0 0 1 -10e-6,226.428565" />
+              <path id="path"
+              style="fill:none;fill-rule:evenodd;stroke-width:38;stroke-miterlimit:4;stroke:#223050;stroke-opacity:0.5;"
+              d="m 66.906305,293.33748 a 160.10918,160.10918 0 0 1 10e-7,-226.428566 a 160.10918,160.10918 0 0 1 226.428574,10e-7 a 160.10918,160.10918 0 0 1 -10e-6,226.428565" />
+              <path
+              style="fill:none;fill-rule:evenodd;;stroke-width:40;stroke-miterlimit:4;" stroke="url(#linear-1-mid)"
+              id="arc"
+              d="m 66.906305,293.33748 a 160.10918,160.10918 0 0 1 10e-7,-226.428566 a 160.10918,160.10918 0 0 1 226.428574,10e-7 a 160.10918,160.10918 0 0 1 -10e-6,226.428565" />
+
+              <!-- <line class="line" x1="53" y1="306" x2="180" y2="180" style="stroke:rgb(255,0,0);stroke-width:2;transform-origin:63px 0px"
+              /> -->
+              <polygon id="bigLine" class="line2" fill="url(#linear-2-mid)"
+              points="180,168 180,192  97,182  50,174"
+              style="fill-opacity:0.9;transform-origin:59px 6px" />
+
+
+
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(226 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(270 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(315 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(405 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(450 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(494 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26">
+              </line>
+
+              <text x="85" y="275" class="number">0</text>
+              <text x="50" y="187" class="number">200</text>
+              <text x="82" y="100" class="number">400</text>
+              <text x="170" y="60" class="number">600</text>
+              <text x="235" y="100" class="number">800</text>
+              <text x="272" y="187" class="number">1.000</text>
+              <text x="235" y="275" class="number">1.200</text>
+
+            </svg>
+            <div class="speedometr-info">
+              <div class="speed-info">
+                <h5 class="h5-speed-info">Download</h5 class="h5-speed-info">
+              </div>
+              <div id="speed-number2">0</div>
+              <!-- <button id="butanim1" class="butanim">START</button> -->
+              <div class="mbps">
+                <svg width="20" height="20" viewBox="0 0 20 20" >
+                <circle cx="10" cy="10" r="9" stroke="#6EFDF3" stroke-width="2" fill="none" />
+                <line x1="10" y1="5" x2="10" y2="14" stroke="#6EFDF3" stroke-width="2"/>
+                <line x1="10" y1="13" x2="6" y2="10" stroke="#6EFDF3" stroke-width="2"/>
+                <line x1="10" y1="13" x2="14" y2="10" stroke="#6EFDF3" stroke-width="2"/>
+                </svg>
+                Mbps
+              </div>
+            </div>
+            <button id="butanim" class=" btn waves-effect waves-light butanim" style="display:none">START</button>
+            <h5 id="enter-key-text">press "enter key" to start</h5>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="col s4">
+        <div class="center-align">
+          <div class="speedometr" >
+            <svg class="speed" preserveAspectRatio="none" viewBox="-1 -106 469 445">
+              <defs>
+                <linearGradient id="linear-1-right" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="10%"   stop-color="#708090"/>
+
+                  <stop offset="100%" stop-color="#c90000"/>
+                </linearGradient>
+              </defs>
+              <defs>
+                <linearGradient id="linear-2-right" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="20%"   stop-color="#fff"/>
+
+                  <stop offset="90%" stop-color="rgba(255,255,255,0)"/>
+                </linearGradient>
+              </defs>
+              <defs>
+                <filter id="f4" x="0" y="0" width="200%" height="200%">
+                  <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
+
+                  <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="25" />
+                  <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                </filter>
+              </defs>
+              <defs>
+                <filter id="f1" x="0" y="0">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="7" />
+                </filter>
+              </defs>
+
+              <path  id="arc2"
+              style="fill:none;fill-rule:evenodd;stroke-width:52;stroke-miterlimit:1;stroke-opacity:0.05;transform-origin:180px 180px;transform:scale(0.9 0.9)"
+              transform="scale(0.9 0.9) translate(20 18)"
+              stroke="url(#linear-1-right)"
+              filter="url(#f1)"
+
+              d="m 66.906305,293.33748 a 160.10918,160.10918 0 0 1 10e-7,-226.428566 a 160.10918,160.10918 0 0 1 226.428574,10e-7 a 160.10918,160.10918 0 0 1 -10e-6,226.428565" />
+              <path id="path"
+              style="fill:none;fill-rule:evenodd;stroke-width:38;stroke-miterlimit:4;stroke:#223050;stroke-opacity:0.5;"
+              d="m 66.906305,293.33748 a 160.10918,160.10918 0 0 1 10e-7,-226.428566 a 160.10918,160.10918 0 0 1 226.428574,10e-7 a 160.10918,160.10918 0 0 1 -10e-6,226.428565" />
+              <path
+              style="fill:none;fill-rule:evenodd;;stroke-width:40;stroke-miterlimit:4;" stroke="url(#linear-1-right)"
+              id="arc"
+              d="m 66.906305,293.33748 a 160.10918,160.10918 0 0 1 10e-7,-226.428566 a 160.10918,160.10918 0 0 1 226.428574,10e-7 a 160.10918,160.10918 0 0 1 -10e-6,226.428565" />
+
+              <!-- <line class="line" x1="53" y1="306" x2="180" y2="180" style="stroke:rgb(255,0,0);stroke-width:2;transform-origin:63px 0px"
+              /> -->
+              <polygon id="bigLine" class="line3" fill="url(#linear-2-right)"
+              points="180,168 180,192  97,182  50,174"
+              style="fill-opacity:0.9;transform-origin:59px 6px" />
+
+
+
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(226 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(270 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(315 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(405 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(450 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26" transform="rotate(494 180 180)">
+              </line>
+              <line class="metka" x1="180" y1="14" x2="180" y2="26">
+              </line>
+
+              <text x="85" y="275" class="number">0</text>
+              <text x="50" y="187" class="number">10</text>
+              <text x="82" y="100" class="number">20</text>
+              <text x="170" y="60" class="number">30</text>
+              <text x="255" y="100" class="number">40</text>
+              <text x="292" y="187" class="number">50</text>
+              <text x="255" y="275" class="number">60</text>
+
+            </svg>
+            <div class="speedometr-info speed-info-right">
+              <div class="speed-info">
+                <h5 class="h5-speed-info">Upload</h5 class="h5-speed-info">
+              </div>
+              <div id="speed-number3">0</div>
+              <!-- <button id="butanim1" class="butanim">START</button> -->
+              <div class="mbps">
+                <svg width="20" height="20" viewBox="0 0 20 20" style="transform:rotate(180deg)" >
+                  <circle cx="10" cy="10" r="9" stroke="#ff7a00" stroke-width="2" fill="none" />
+                  <line x1="10" y1="5" x2="10" y2="14" stroke="#ff7a00" stroke-width="2"/>
+                  <line x1="10" y1="13" x2="6" y2="10" stroke="#ff7a00" stroke-width="2"/>
+                  <line x1="10" y1="13" x2="14" y2="10" stroke="#ff7a00" stroke-width="2"/>
+                </svg>
+                Mbps
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="lib/jquery-ui/jquery-ui.min.js"></script>
+
+  <script type="text/javascript" src="lib/materialize.min.js"></script>
+  <script type="text/javascript" src="lib/segment.min.js"></script>
+  <script type="text/javascript" src="lib/tweenmax.min.js"></script>
+  <!-- <script type="text/javascript" src="app.js"></script> -->
+
+  <script>
+
+  $(document).ready(function(){
+
+    TweenLite.to(".line1", 1, {rotationZ: -45, ease:Linear.easeNone});
+    TweenLite.to(".line2", 1, {rotationZ: -45, ease:Linear.easeNone});
+    TweenLite.to(".line3", 1, {rotationZ: -45, ease:Linear.easeNone});
+
+    $('#modal1').modal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      inDuration: 800, // Transition in duration
+      outDuration: 200, // Transition out duration
+      startingTop: '4%', // Starting top style attribute
+      endingTop: '10%', // Ending top style attribute
+      ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+        // alert("Ready");
+        // console.log(modal, trigger);
+      },
+       // Callback for Modal close
+    }
+
+
+  );
+
+  $(document).keypress(function(e) {
+    if(e.which == 13) {
+      if($('.butanim').hasClass('disabled')){
+
+      }else{
+        $('.butanim').click();
+        $('#modal1').modal('close');
+      }
+    }
+});
+  // $('#modal1').modal('open');
+
+  });
+
+
+  $('.butanim').click(function(){
+    $('.butanim').text('start');
+    $('#enter-key-text').animate({
+            color: "#67879d"
+        }, 1500);
+    $(this).addClass('disabled');
+    $('#speed-number1, #speed-number2, #speed-number3').text('0');
+    var i = 1, howManyTimes = 100;
+    var pointer = 1;
+    function f() {
+
+      pointer = Math.random() * (33 - 38) + 38;
+      var val = pointer;
+      var path = document.getElementById("path");
+      var pathDimensions = path.getTotalLength();
+      var counter = { var: 0 };
+      var tal = document.getElementById("speed-number1");
+      var angle = 270;
+      var duga = 3.14*160*angle/180;
+      var segm = pathDimensions/5;
+      TweenLite.to(".line1", 0.1, {rotationZ: "0", ease:Linear.easeNone});
+      function start(){
+        TweenLite.to(".line1", 1, {rotationZ: angle - 45, ease:Linear.easeNone});
+        TweenMax.to(counter, 1, {
+          var: 0,
+          onUpdate: function () {
+            tal.innerHTML = Math.ceil(pointer);
+          },
+          ease:Linear.easeNone
+        });
+      };
+      function start2(val_deg1){
+        // max degree 225
+        var degree = ((val_deg1*225)/45)-45;
+        TweenLite.to(".line1", 1, {rotationZ: degree - 165, ease:Linear.easeNone});
+        TweenMax.to(counter, 1, {
+          var: 0,
+          onUpdate: function () {
+            tal.innerHTML = Math.ceil(val_deg1-25);
+          },
+          ease:Linear.easeNone
+        });
+      };
+      start();
+      start2(pointer);
+      i++;
+      if( i >= howManyTimes-1){
+        TweenLite.to(".line1", 1, {rotationZ: -45, ease:Linear.easeNone});
+        // $('#start').removeClass('disabled');
+        var i2 = 1, howManyTimes2 = 200;
+        var pointer2 = 1;
+        function f2() {
+
+          pointer2 = Math.random() * (50 - 30) + 30;
+          var val2 = pointer2;
+          var path2 = document.getElementById("path2");
+          var pathDimensions2 = path.getTotalLength();
+          var counter2 = { var: 0 };
+          var tal2 = document.getElementById("speed-number2");
+          var angle2 = 270;
+          var duga2 = 3.14*160*angle/180;
+          var segm2 = pathDimensions/5;
+          TweenLite.to(".line2", 0.1, {rotationZ: "0", ease:Linear.easeNone});
+          function start3(){
+            TweenLite.to(".line2", 1, {rotationZ: angle - 45, ease:Linear.easeNone});
+            TweenMax.to(counter2, 1, {
+              var: 0,
+              onUpdate: function () {
+                tal2.innerHTML =  Math.ceil(pointer2);
+              },
+              ease:Linear.easeNone
+            });
+          };
+
+          function start4(val_deg2){
+            // max degree 225
+            var degree2 = ((val_deg2*120)/100)-100;
+            TweenLite.to(".line2", 1, {rotationZ: degree2+238, ease:Linear.easeNone});
+            TweenMax.to(counter2, 1, {
+              var: 0,
+              onUpdate: function () {
+                tal2.innerHTML = '10'+Math.ceil(val_deg2);
+                if(tal2.innerHTML > 1000){
+                  $('#download-result').text('1.0'+Math.ceil(val_deg2));
+                  $('#download-type').text('Gbps');
+                }
+              },
+              ease:Linear.easeNone
+            });
+          };
+          start3();
+          start4(pointer2);
+          // console.log(pointer2);
+          i2++;
+
+          if( i2 >= howManyTimes2){
+            // $('#start').removeClass('disabled');
+            TweenLite.to(".line2", 1, {rotationZ: -45, ease:Linear.easeNone});
+            var i3 = 1, howManyTimes3 = 200;
+            var pointer3 = 1;
+            function f3() {
+
+              pointer3 = Math.random() * (49.5 - 48) + 48;
+              var val3 = pointer3;
+              var path3 = document.getElementById("path3");
+              var pathDimensions3 = path.getTotalLength();
+              var counter3 = { var: 0 };
+              var tal3 = document.getElementById("speed-number3");
+              var angle3 = 270;
+              var duga3 = 3.14*160*angle/180;
+              var segm3 = pathDimensions/5;
+              TweenLite.to(".line3", 0.1, {rotationZ: "0", ease:Linear.easeNone});
+              function start4(){
+                TweenLite.to(".line3", 1, {rotationZ: angle - 45, ease:Linear.easeNone});
+                TweenMax.to(counter3, 1, {
+                  var: 0,
+                  onUpdate: function () {
+                    tal3.innerHTML =  Math.ceil(pointer3);
+                  },
+                  ease:Linear.easeNone
+                });
+              };
+
+              function start5(val_deg3){
+                // max degree 225
+                var degree3 = ((val_deg3*225)/45)-45;
+                TweenLite.to(".line3", 1, {rotationZ: degree3 - 27, ease:Linear.easeNone});
+                TweenMax.to(counter3, 1, {
+                  var: 0,
+                  onUpdate: function () {
+                    tal3.innerHTML = Math.ceil(val_deg3 * 10)/10;
+                  },
+                  ease:Linear.easeNone
+                });
+              };
+              start4();
+              start5(pointer3);
+              // console.log(pointer2);
+              i3++;
+              if( i3 >= howManyTimes3-1){
+                $('.butanim').removeClass('disabled');
+                $('.butanim').text('retry');
+                $('#enter-key-text').animate({
+                        color: "#fff"
+                    }, 1500);
+                TweenLite.to(".line3", 1, {rotationZ: -45, ease:Linear.easeNone});
+                $('#modal1').modal('open');
+              }
+              if( i3 < howManyTimes3 ){
+                setTimeout( f3, 55 );
+              }
+            }
+            f3();
+          }
+          if( i2 < howManyTimes2 ){
+            setTimeout( f2, 55 );
+          }
+        }
+        f2();
+      }
+      if( i < howManyTimes ){
+        setTimeout( f, 55 );
+      }
+    }
+    f();
+
+  });
+
+  $(function () {
+    "use strict";
+    var resizeTracker;
+    // Counteracts all transforms applied above an element.
+    // Apply a translation to the element to have it remain at a local position
+    var unscale = function (el) {
+      var svg = el.ownerSVGElement.ownerSVGElement;
+      var xf = el.scaleIndependentXForm;
+      if (!xf) {
+        // Keep a single transform matrix in the stack for fighting transformations
+        xf = el.scaleIndependentXForm = svg.createSVGTransform();
+        // Be sure to apply this transform after existing transforms (translate)
+        el.transform.baseVal.appendItem(xf);
+      }
+      var m = svg.getTransformToElement(el.parentNode);
+      m.e = m.f = 0; // Ignore (preserve) any translations done up to this point
+      xf.setMatrix(m);
+    };
+    [].forEach.call($("text, .tick"), unscale);
+    $(window).resize(function () {
+      if (resizeTracker) clearTimeout(resizeTracker);
+      resizeTracker = setTimeout(function () { [].forEach.call($("text, .tick"), unscale); }, 100);
+    });
+  });
+  </script>
+</body>
+</html>
