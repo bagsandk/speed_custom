@@ -687,16 +687,16 @@
               //   200
               // );
               $("#latency-icon").show();
-                  $("#marktext-2").html("100");
-                  $("#marktext-3").html("250");
-                  $("#marktext-4").html("500");
-                  $("#marktext-5").html("750");
-                  $("#marktext-6").html("1000");
-                  $("#marktext-7").html("1250");
+                  $("#marktext-2").html("50");
+                  $("#marktext-3").html("100");
+                  $("#marktext-4").html("150");
+                  $("#marktext-5").html("200");
+                  $("#marktext-6").html("250");
+                  $("#marktext-7").html("300");
               $(".butanim").text("downloading..");
               document.getElementById("currency").innerHTML = "Mbps";
               document.getElementById("speed-number2").innerHTML = "0";
-              pointer2 = Math.random() * (13) + 38 + 290;
+              pointer2 = Math.random() * (13) + 38 +230;
               var val2 = pointer2;
               var path2 = document.getElementById("path2");
               // var pathDimensions2 = path.getTotalLength();
@@ -734,15 +734,15 @@
 
               function start4(val_deg2) {
                 // max degree 225
-                var degree2 = (val_deg2 * 120) / 120 - 170;
+                var degree2 = (val_deg2 * 120) / 120 - 100;
                 TweenLite.to(".line2", 1, {
-                  rotationZ: degree2 + 17,
+                  rotationZ: degree2 +20,
                   ease: Linear.easeNone,
                 });
                 TweenMax.to(counter2, 1, {
                   var: 0,
                   onUpdate: function () {
-                    tal2.innerHTML = "" + Math.ceil(val_deg2 + 700);
+                    tal2.innerHTML = "" + Math.ceil(val_deg2);
                     // if (tal2.innerHTML > 1000) {
                     $("#download-result").text("5.0" + Math.ceil(val_deg2));
                     $("#download-type").text("Gbps");
@@ -778,15 +778,15 @@
                   //   200
                   // );
                   $("#download-icon").show();
-                  $("#marktext-2").html("100");
-                  $("#marktext-3").html("250");
-                  $("#marktext-4").html("500");
-                  $("#marktext-5").html("750");
-                  $("#marktext-6").html("1000");
-                  $("#marktext-7").html("1250");
+                  $("#marktext-2").html("50");
+                  $("#marktext-3").html("100");
+                  $("#marktext-4").html("150");
+                  $("#marktext-5").html("200");
+                  $("#marktext-6").html("250");
+                  $("#marktext-7").html("300");
                   $(".butanim").text("uploading..");
                   document.getElementById("speed-number2").innerHTML = "0";
-                  pointer3 = Math.random() * (10) + 68;
+                  pointer3 = Math.random() * (10) + 125;
                   var path3 = document.getElementById("path2");
                   // var pathDimensions3 = path.getTotalLength();
                   var counter3 = { var: 0 };
@@ -829,12 +829,12 @@
                     TweenMax.to(counter3, 1, {
                       var: 0,
                       onUpdate: function () {
-                        tal3.innerHTML = "" + Math.ceil(val_deg3 * 1 + 60) / 1;
+                        tal3.innerHTML = "" + Math.ceil(val_deg3 * 1) / 1;
                         $("#upload-value").text(
-                          "" + tal3.innerHTML + " Mbps"
+                          "" + Math.ceil(val_deg3 * 1) / 1 + " Mbps"
                         );
                         $("#upload-value2").text(
-                          "" + tal3.innerHTML + " Mbps"
+                          "" + Math.ceil(val_deg3 * 1) / 1 + " Mbps"
                         );
                       },
                       ease: Linear.easeNone,
