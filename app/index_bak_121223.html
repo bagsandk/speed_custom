@@ -446,7 +446,7 @@
               </div>
               <button id="butanim" class="btn waves-effect waves-light butanim">
                 START
-              </button> 
+              </button>
               <h5 id="enter-key-text" style="display: none">
                 press "enter key" to start
               </h5>
@@ -612,9 +612,7 @@
           $("#marktext-5").html("20");
           $("#marktext-6").html("25");
           $("#marktext-7").html("30");
-
-          
-          pointer = (Math.random() * (4)) + 53;
+          pointer = (Math.random() * (4)) + 46;
           var val = pointer;
           var path = document.getElementById("path2");
           // var pathDimensions = path.getTotalLength();
@@ -649,10 +647,9 @@
               ease: Linear.easeNone,
             });
           }
-          //ngatur latency
           function start2(val_deg1) {
             // max degree 225
-            var degree = (val_deg1 * 225) / 45 - 30;
+            var degree = (val_deg1 * 225) / 45 - 45;
             TweenLite.to(".line2", 1, {
               rotationZ: degree - 165,
               ease: Linear.easeNone,
@@ -690,16 +687,16 @@
               //   200
               // );
               $("#latency-icon").show();
-                $("#marktext-2").html("100");
-                  $("#marktext-3").html("200");
-                  $("#marktext-4").html("300");
-                  $("#marktext-5").html("400");
-                  $("#marktext-6").html("500");
-                  $("#marktext-7").html("600");
+                  $("#marktext-2").html("100");
+                  $("#marktext-3").html("250");
+                  $("#marktext-4").html("500");
+                  $("#marktext-5").html("750");
+                  $("#marktext-6").html("1000");
+                  $("#marktext-7").html("1250");
               $(".butanim").text("downloading..");
               document.getElementById("currency").innerHTML = "Mbps";
               document.getElementById("speed-number2").innerHTML = "0";
-              pointer2 = Math.random() * (13) + 38 + 300;
+              pointer2 = Math.random() * (13) + 38 + 290;
               var val2 = pointer2;
               var path2 = document.getElementById("path2");
               // var pathDimensions2 = path.getTotalLength();
@@ -735,18 +732,17 @@
               //   200
               // );
 
-              //download
               function start4(val_deg2) {
                 // max degree 225
-                var degree2 = (val_deg2 * 120) / 120 - 250;
+                var degree2 = (val_deg2 * 120) / 120 - 170;
                 TweenLite.to(".line2", 1, {
-                  rotationZ: degree2 +20,
+                  rotationZ: degree2 + 17,
                   ease: Linear.easeNone,
                 });
                 TweenMax.to(counter2, 1, {
                   var: 0,
                   onUpdate: function () {
-                    tal2.innerHTML = "" + Math.ceil(val_deg2);
+                    tal2.innerHTML = "" + Math.ceil(val_deg2 + 700);
                     // if (tal2.innerHTML > 1000) {
                     $("#download-result").text("5.0" + Math.ceil(val_deg2));
                     $("#download-type").text("Gbps");
@@ -783,11 +779,11 @@
                   // );
                   $("#download-icon").show();
                   $("#marktext-2").html("100");
-                  $("#marktext-3").html("200");
-                  $("#marktext-4").html("300");
-                  $("#marktext-5").html("400");
-                  $("#marktext-6").html("500");
-                  $("#marktext-7").html("600");
+                  $("#marktext-3").html("250");
+                  $("#marktext-4").html("500");
+                  $("#marktext-5").html("750");
+                  $("#marktext-6").html("1000");
+                  $("#marktext-7").html("1250");
                   $(".butanim").text("uploading..");
                   document.getElementById("speed-number2").innerHTML = "0";
                   pointer3 = Math.random() * (10) + 68;
@@ -823,10 +819,9 @@
                     });
                   }
 
-                  //upload
                   function start5(val_deg3) {
                     // max degree 225
-                    var degree3 = (val_deg3 * 120) / 120 - 135;
+                    var degree3 = (val_deg3 * 120) / 120 - 100;
                     TweenLite.to(".line2", 1, {
                       rotationZ: degree3 + 38,
                       ease: Linear.easeNone,
@@ -834,12 +829,12 @@
                     TweenMax.to(counter3, 1, {
                       var: 0,
                       onUpdate: function () {
-                        tal3.innerHTML = "" + Math.ceil(val_deg3 * 1) / 1;
+                        tal3.innerHTML = "" + Math.ceil(val_deg3 * 1 + 60) / 1;
                         $("#upload-value").text(
-                          "" + Math.ceil(val_deg3 * 1) / 1 + " Mbps"
+                          "" + tal3.innerHTML + " Mbps"
                         );
                         $("#upload-value2").text(
-                          "" + Math.ceil(val_deg3 * 1) / 1 + " Mbps"
+                          "" + tal3.innerHTML + " Mbps"
                         );
                       },
                       ease: Linear.easeNone,
