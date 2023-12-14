@@ -614,7 +614,7 @@
           $("#marktext-7").html("30");
 
           
-          pointer = (Math.random() * (4)) + 52;
+          pointer = (Math.random() * (4)) + 53;
           var val = pointer;
           var path = document.getElementById("path2");
           // var pathDimensions = path.getTotalLength();
@@ -699,7 +699,7 @@
               $(".butanim").text("downloading..");
               document.getElementById("currency").innerHTML = "Mbps";
               document.getElementById("speed-number2").innerHTML = "0";
-              pointer2 = Math.random() * (13) + 38 + 370;
+              pointer2 = Math.random() * (13) + 38 + 300;
               var val2 = pointer2;
               var path2 = document.getElementById("path2");
               // var pathDimensions2 = path.getTotalLength();
@@ -738,7 +738,7 @@
               //download
               function start4(val_deg2) {
                 // max degree 225
-                var degree2 = (val_deg2 * 120) / 120 - 290;
+                var degree2 = (val_deg2 * 120) / 120 - 250;
                 TweenLite.to(".line2", 1, {
                   rotationZ: degree2 +20,
                   ease: Linear.easeNone,
